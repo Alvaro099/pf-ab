@@ -1,0 +1,46 @@
+---
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 mx-auto w-fit">
+  <section class="text-dark my-5">
+    <div class="relative container mx-auto flex justify-center px-4 sm:px-8 rounded-2xl shadow-md border border-gray-200 z-2 backdrop-blur-[5px] bg-white/90 flex-row py-4 items-left text-left">
+      <nav class="flex items-center justify-between gap-1.5 sm:gap-3 md:gap-4 text-xs sm:text-sm md:text-base">
+        <a href="#about" class="whitespace-nowrap text-gray hover:text-primary transition-colors">Sobre mí</a>
+        <a href="#experience" class="whitespace-nowrap text-gray hover:text-primary transition-colors">Experiencia</a>
+        <a href="#work" class="whitespace-nowrap text-gray hover:text-primary transition-colors">Proyectos</a>
+        <a href="#contact" class="whitespace-nowrap text-gray hover:text-primary transition-colors">Contacto</a>
+        <a href="/en/" class="ml-1 sm:ml-2 px-2 sm:px-2.5 py-1 rounded-lg border border-gray-300 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-gray hover:border-primary hover:text-primary transition-colors whitespace-nowrap" aria-label="Switch to ES">ES</a>
+      </nav>
+    </div>
+  </section>
+</header>
+
+<script>
+  const c = document.querySelectorAll("nav a[href^='#']");
+  const l = document.querySelectorAll("section[id]");
+  const r = new Map();
+
+  c.forEach(t => {
+    const s = t.getAttribute("href");
+    s && r.set(s.slice(1), t);
+  });
+
+  let o = null;
+  const a = new IntersectionObserver(t => {
+    const s = t.filter(e => e.isIntersecting);
+    if (s.length === 0) return;
+
+    const i = s.reduce((e, n) => n.intersectionRatio > e.intersectionRatio ? n : e).target.id;
+    if (i && i !== o) {
+      o = i;
+      c.forEach(n => n.classList.remove("active"));
+      const e = r.get(i);
+      e && e.classList.add("active");
+    }
+  }, {
+    rootMargin: "-50% 0px -50% 0px",
+    threshold: [0, .25, .5, .75, 1]
+  });
+
+  l.forEach(t => a.observe(t));
+</script>

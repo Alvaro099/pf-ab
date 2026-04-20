@@ -1,0 +1,18 @@
+{
+  "name": "stellar-spectrum",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^6.0.1",
+    "sharp": "^0.34.2",
+    "tailwindcss": "^3.4.17"
+  }
+}

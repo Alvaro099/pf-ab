@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #714B67;
+  --color-secondary: #017E84;
+  --color-gray: #8F8F8F;
+  --color-dark: #f9f9f9;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-gray);
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    600px circle at var(--x, 50%) var(--y, 50%),
+    rgba(120, 119, 198, 0.06),
+    transparent 40%
+  );
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.spotlight.visible {
+  opacity: 1;
+}
+
+.main-btn {
+  background-color: var(--color-primary);
+  color: var(--color-dark);
+  font-weight: 600;
+  border: 1px solid var(--custom-border-color, rgba(255, 255, 255, 0.3));
+  transition: all 0.3s ease;
+}
+
+.main-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(113, 75, 103, 0.3);
+}
+
+.active {
+  color: var(--color-primary);
+}
+
+.full-width {
+  width: 100%;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+dialog[open] {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

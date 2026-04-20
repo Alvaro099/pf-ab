@@ -1,0 +1,81 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+  title, 
+  description = "Analista Funcional / Desarrollador con experiencia en Odoo y tecnologías web." 
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es" class="scroll-smooth scroll-pt-20">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="Alvaro Bustos, Analista Funcional, Desarrollador, Odoo, TypeScript, JavaScript, Portfolio, Madrid, Siglo 21" />
+    <meta name="author" content="Alvaro Bustos" />
+    <link rel="canonical" href="" />
+    
+    <link rel="alternate" hreflang="es" href="" />
+    <link rel="alternate" hreflang="en" href="" />
+    <link rel="alternate" hreflang="x-default" href="" />
+    
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:site_name" content="Alvaro Bustos Portfolio" />
+    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://fmorenil.dev/" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://fmorenil.dev/img/Foto%20Perfil.jpeg" />
+    
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#c7ff24" />
+    
+    <script src="https://www.googletagmanager.com/gtag"></script>
+    <script>
+    </script>
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Alvaro Bustos",
+        "jobTitle": "Analista Funcional / Desarrollador",
+        "url": "",
+        "sameAs": [
+          "https://www.linkedin.com/in/fernando-morenilla",
+          "https://github.com/Fernandomr23"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Be innovation Tech"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Siglo 21"
+        },
+        "knowsAbout": ["Odoo", "TypeScript", "JavaScript", "Linux", "ERP Developer"],
+        "description": "Analista Funcional / Desarrollador con experiencia en Odoo y tecnologías web."
+      }
+    </script>
+	</head>
+	<body class="bg-dark text-light font-primary">
+    <slot />
+	</body>
+</html>

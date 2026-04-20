@@ -1,0 +1,29 @@
+---
+---
+
+<section class="full-width bg-white text-dark" id="contact">
+  <div class="flex flex-col items-center justify-center text-center gap-6 max-w-[1200px] mx-auto px-4 sm:px-8 lg:px-16 xl:px-32 py-24 sm:py-32">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Contacto</h2>
+    <p class="text-gray leading-relaxed text-lg max-w-lg">
+      Estoy abierto a conocer nuevos proyectos y oportunidades. Ante cualquier consulta o interés en colaborar, no dudes en contactarme.
+    </p>
+    <button type="button" onclick="document.getElementById('emailModal').showModal()" class="group text-primary hover:text-secondary transition-colors duration-200 text-base underline underline-offset-4 decoration-gray group-hover:decoration-secondary">
+      Hablemos!
+    </button>
+  </div>
+</section>
+
+<dialog id="emailModal" class="backdrop:bg-black/50 p-4 rounded-lg border-0">
+  <div class="bg-white p-6 rounded-xl shadow-xl max-w-md w-full mx-auto">
+    <h3 class="text-xl font-bold mb-4 text-dark">Enviar Email</h3>
+    <form action="https://formspree.io/f/xkokvgol" method="POST" class="flex flex-col gap-4">
+      <input type="email" name="email" placeholder="Tu email" required class="px-4 py-2 border border-gray-200 rounded-lg focus:border-primary outline-none">
+      <input type="text" name="subject" placeholder="Asunto" required class="px-4 py-2 border border-gray-200 rounded-lg focus:border-primary outline-none">
+      <textarea name="message" placeholder="Mensaje" required rows="4" class="px-4 py-2 border border-gray-200 rounded-lg focus:border-primary outline-none"></textarea>
+      <div class="flex gap-2 justify-end">
+        <button type="button" onclick="this.closest('dialog').close()" class="px-4 py-2 text-gray hover:text-dark transition-colors">Cancelar</button>
+        <button type="submit" class="px-4 py-2 bg-primary text-white rounded-lg hover:opacity-90 transition-colors">Enviar</button>
+      </div>
+    </form>
+  </div>
+</dialog>
