@@ -22,10 +22,10 @@ const projects = [
 <section id="work" class="full-width h-full py-10 px-4 sm:px-8 lg:px-16 xl:px-32 bg-gray-100 text-dark">
   <div class="relative max-w-[1200px] mx-auto p-4 z-10">
     <div class="flex flex-row items-center gap-3 text-3xl z-1">
-      <h2 class="text-white text-4xl">Proyectos</h2>
+      <h2 class="text-4xl">Proyectos</h2>
     </div>
     <div class="mt-10 space-y-8">
-      <p class="text-white leading-relaxed">
+      <p class="leading-relaxed text-dark text-lg">
         Estos proyectos reflejan la exploración de las distintas herramientas que componentes Odoo, profundizando en sus frameworks para desarrollar soluciones funcionales y especializarme en su ecosistema.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -46,18 +46,18 @@ const projects = [
                 <a href={project.url} target="_blank" class="text-white px-4 py-2 rounded-3xl main-btn flex items-center overflow-hidden" style="--custom-border-color: rgba(255, 255, 255, 0.3)">
                   <svg width="1em" height="1em" class="flex-shrink-0 mr-2">
                     <symbol id="new-window" viewBox="0 0 24 24">
-                      <path fill="currentColor" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3z"/>
+                      <path fill="White" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3z"/>
                     </symbol>
                     <use href="#new-window"></use>
                   </svg>
-                  <span>Ver Proyecto</span>
+                  <span class="text-white">Ver Proyecto</span>
                 </a>
                 {project.repo && (
                   <a href={project.repo} target="_blank" class="text-white px-4 py-2 rounded-3xl main-btn flex items-center overflow-hidden" style="--custom-border-color: rgba(255, 255, 255, 0.3)">
                     <svg width="1em" height="1em" class="flex-shrink-0 mr-2">
                       <use href="#github"></use>
                     </svg>
-                    <span>Ver Repositorio</span>
+                    <span class="text-white">Ver Repositorio</span>
                   </a>
                 )}
               </div>

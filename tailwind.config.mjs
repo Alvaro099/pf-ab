@@ -4,11 +4,12 @@ export default {
 	theme: {
 		extend: {
 			colors: {
-				dark: '#1a1a2e',
-				primary: '#714B67',
-				accent: '#714B67',
-				secondary: '#017E84',
-				gray: '#6b7280',
+				dark: '#000000',
+				primary: '#1e3a5f',
+				accent: '#1e3a5f',
+				secondary: '#4a5568',
+				gray: '#718096',
+				light: '#ffffff',
 			},
 			fontFamily: {
 				primary: ['Inter', 'system-ui', 'sans-serif'],

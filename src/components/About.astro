@@ -20,7 +20,7 @@ const technologies = [
 
 <section id="about" class="full-width h-full py-10 px-4 sm:px-8 lg:px-16 xl:px-32 bg-gray-100 text-dark">
   <div class="relative max-w-[1200px] mx-auto p-4 z-10">
-    <div class="text-white flex flex-row items-center gap-3 text-3xl sm:text-4xl">
+    <div class=" flex flex-row items-center gap-3 text-3xl sm:text-4xl">
       <h2>Sobre mí</h2>
     </div>
     <div class="lg:grid-cols-3 gap-8 lg:gap-10 my-5 mb-8">
@@ -39,10 +39,10 @@ const technologies = [
         </div>
         <div class="group bg-grey border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary shadow-sm flex flex-col">
           <div class="p-6 flex-grow flex flex-col">
-            <h3 class="text-white text-2xl font-semibold mb-8 text-center lg:text-left">Tecnologías y herramientas</h3>
+            <h3 class="text-2xl font-semibold mb-8 text-center lg:text-left">Tecnologías y herramientas</h3>
             <div class="flex flex-wrap gap-x-2 gap-y-4 justify-center lg:justify-start">
               {technologies.map(tech => (
-                <div class="text-white flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all ease cursor-default">
+                <div class="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all ease cursor-default">
                   <img src={tech.icon} alt={`${tech.name} logo`} class="w-5 h-5">
                   <span>{tech.name}</span>
                 </div>
@@ -51,10 +51,10 @@ const technologies = [
           </div>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="group bg-[#171e2d] border border-slate-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[var(--color-primary)] flex flex-col">
+          <div class="group bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary shadow-sm flex flex-col">
             <div class="p-6 flex-grow flex flex-row items-center">
-              <div class="bg-[#1e293b] p-3 rounded-xl mr-2">
-                <svg width="1em" height="1em" class="text-[var(--color-primary)] w-8 h-8">
+              <div class="p-3 rounded-xl mr-2">
+                <svg width="1em" height="1em" class="text-primary w-8 h-8">
                   <symbol id="macbook" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M4 5v11h16V5zm-2-.993C2 3.451 2.455 3 2.992 3h18.016c.548 0 .992.449.992 1.007V18H2zM1 19h22v2H1z"/>
                   </symbol>
@@ -62,15 +62,15 @@ const technologies = [
                 </svg>
               </div>
               <div>
-                <p class="text-xs uppercase tracking-wider font-semibold text-slate-500">Actualmente en</p>
-                <p class="text-white font-medium">Busqueda de trabajo</p>
+                <p class="text-xs uppercase tracking-wider font-semibold text-gray-500">Actualmente en</p>
+                <p class="font-medium">Busqueda de trabajo</p>
               </div>
             </div>
           </div>
-          <div class="group bg-[#171e2d] border border-slate-800 rounded-2xl overflow-hidden transition-all duration-300 hover:border-[var(--color-primary)] flex flex-col">
+          <div class="group bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary shadow-sm flex flex-col">
             <div class="p-6 flex-grow flex flex-row items-center">
-              <div class="bg-[#1e293b] p-3 rounded-xl mr-2">
-                <svg width="1em" height="1em" class="text-[var(--color-primary)] w-8 h-8">
+              <div class="p-3 rounded-xl mr-2">
+                <svg width="1em" height="1em" class="text-primary w-8 h-8">
                   <symbol id="student" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M4 11.333 0 9l12-7 12 7v8.5h-2v-7.333l-2 1.166v6.678l-.223.275A9.98 9.98 0 0 1 12 22a9.98 9.98 0 0 1-7.777-3.714L4 18.011zM6 12.5v4.792A7.98 7.98 0 0 0 12 20a7.98 7.98 0 0 0 6-2.708V12.5L12 16zM3.97 9 12 13.685 20.03 9 12 4.315z"/>
                   </symbol>
@@ -78,8 +78,8 @@ const technologies = [
                 </svg>
               </div>
               <div>
-                <p class="text-xs uppercase tracking-wider font-semibold text-slate-500">Estudiando en</p>
-                <p class="text-white font-medium">Siglo 21</p>
+                <p class="text-xs uppercase tracking-wider font-semibold text-gray-500">Estudiando en</p>
+                <p class="font-medium">Siglo 21</p>
               </div>
             </div>
           </div>
