@@ -1,0 +1,49 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import About from '../../components/About.astro';
+import Experience from '../../components/Experience.astro';
+import Projects from '../../components/Projects.astro';
+import Contact from '../../components/Contact.astro';
+import Footer from '../../components/Footer.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('en');
+
+const title = "Alvaro Bustos - Functional Analyst / Developer";
+const description = "Portfolio of Alvaro Bustos, Functional Analyst and Developer with experience in Odoo, TypeScript and JavaScript. Discover my professional background, highlighted projects and technical skills on this personal website.";
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="relative">
+    <div class="spotlight" id="spotlight"></div>
+    <Hero />
+    <About />
+    <Experience />
+    <Projects />
+    <Contact />
+  </main>
+  <Footer />
+</Layout>
+
+<script>
+  const e = document.getElementById("spotlight");
+  document.addEventListener("mousemove", t => {
+    e?.style.setProperty("--x", t.clientX.toString()),
+    e?.style.setProperty("--y", t.clientY.toString())
+  });
+  document.addEventListener("mouseenter", () => {
+    e?.classList.add("visible")
+  });
+  document.addEventListener("mouseleave", () => {
+    e?.classList.remove("visible")
+  });
+  document.querySelector("main")?.addEventListener("mouseenter", () => {
+    e?.classList.add("visible")
+  });
+  document.querySelector("main")?.addEventListener("mouseleave", () => {
+    e?.classList.remove("visible")
+  });
+</script>

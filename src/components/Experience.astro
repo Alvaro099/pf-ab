@@ -1,42 +1,47 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
 const experiences = [
   {
     title: "Be Innovation Tech",
-    role: "Analista Funcional / Desarrollador",
+    role: lang === 'en' ? "Functional Analyst / Developer" : "Analista Funcional / Desarrollador",
     period: "Julio 2025 - Presente",
-    description: "Relevamiento y análisis funcional, definición de alcances y asesoramiento sobre procesos, con participación en planificación, documentación, pruebas, capacitación y soporte, enfocado en implementaciones eficientes y calidad de entregables.",
+    description: lang === 'en' ? "Functional survey and analysis, scope definition and process advice, with participation in planning, documentation, testing, training and support, focused on efficient implementations and deliverable quality." : "Relevamiento y análisis funcional, definición de alcances y asesoramiento sobre procesos, con participación en planificación, documentación, pruebas, capacitación y soporte, enfocado en implementaciones eficientes y calidad de entregables.",
     technologies: ["Odoo", "Python", "Javascript", "ERP"],
     isActive: true
   },
   {
     title: "Aurelia",
-    role: "Desarrollador Full Stack Jr",
+    role: lang === 'en' ? "Jr Full Stack Developer" : "Desarrollador Full Stack Jr",
     period: "Marzo 2025 — Junio 2025",
-    description: "Desarrollo de una aplicación para que los clientes puedan crear su asistente IA personalizado que se conecta directamente con sus canales de contacto.",
+    description: lang === 'en' ? "Development of an application so that clients can create their personalized AI assistant that connects directly with their contact channels." : "Desarrollo de una aplicación para que los clientes puedan crear su asistente IA personalizado que se conecta directamente con sus canales de contacto.",
     technologies: ["Astro", "Airtable", "n8n" , "No-Code", "IA" , "Typescript"],
     isActive: false
   },
   {
     title: "Madketing",
-    role: "Analista Funcional",
+    role: lang === 'en' ? "Functional Analyst" : "Analista Funcional",
     period: "Diciembre 2024 — Junio 2025",
-    description: "Encargado de integraciones con Make y n8n, desarrollo de herramientas vía APIs, gestión y mantenimiento de CRM, implementación de analítica con Google Analytics y Tag Manager, creación de UTMs, administración de campañas en Meta Ads y Google Ads, y visualización de datos en Looker Studio.",
+    description: lang === 'en' ? "In charge of integrations with Make and n8n, development of tools via APIs, CRM management and maintenance, analytics implementation with Google Analytics and Tag Manager, UTM creation, campaign management in Meta Ads and Google Ads, and data visualization in Looker Studio." : "Encargado de integraciones con Make y n8n, desarrollo de herramientas vía APIs, gestión y mantenimiento de CRM, implementación de analítica con Google Analytics y Tag Manager, creación de UTMs, administración de campañas en Meta Ads y Google Ads, y visualización de datos en Looker Studio.",
     technologies: ["Odoo", "GHL", "JavaScript", "Google Analytics", "SEO"],
     isActive: false
   },
   {
     title: "Hospital Privado Universitario de Córdoba",
-    role: "Soporte Nivel 1",
+    role: lang === 'en' ? "Level 1 Support" : "Soporte Nivel 1",
     period: "Noviembre 2023 — Noviembre 2024",
-    description: "Soporte técnico a usuarios, resolviendo incidencias de hardware y software, gestión de cuentas mediante Active Directory, mantenimiento y verificación de equipos, asistencia remota con herramientas de Windows Server y VNC, y reporte de errores en sistemas a partir de incidencias de usuarios.",
+    description: lang === 'en' ? "Technical support to users, resolving hardware and software incidents, account management via Active Directory, equipment maintenance and verification, remote assistance with Windows Server and VNC tools, and error reporting in systems based on user incidents." : "Soporte técnico a usuarios, resolviendo incidencias de hardware y software, gestión de cuentas mediante Active Directory, mantenimiento y verificación de equipos, asistencia remota con herramientas de Windows Server y VNC, y reporte de errores en sistemas a partir de incidencias de usuarios.",
     technologies: ["Windows Server", "Microsoft 365", "Windows Office"],
     isActive: false
   },
    {
     title: "Feas Electrónica S.A.",
-    role: "Analista Funcional",
+    role: lang === 'en' ? "Functional Analyst" : "Analista Funcional",
     period: "Agosto 2022 — Agosto 2023",
-    description: "Pasantia brindando soporte al ERP Odoo, realizando análisis funcional para mejoras, desarrollo de herramientas en Python integradas al sistema o mediante APIs, y generación de reportes en Excel y Odoo, con foco en optimizar la eficiencia y funcionalidad.",
+    description: lang === 'en' ? "Internship providing support for Odoo ERP, performing functional analysis for improvements, development of tools in Python integrated to the system or via APIs, and report generation in Excel and Odoo, focusing on optimizing efficiency and functionality." : "Pasantia brindando soporte al ERP Odoo, realizando análisis funcional para mejoras, desarrollo de herramientas en Python integradas al sistema o mediante APIs, y generación de reportes en Excel y Odoo, con foco en optimizar la eficiencia y funcionalidad.",
     technologies: ["Odoo", "Python", "No Code"],
     isActive: false
   }
@@ -46,7 +51,7 @@ const experiences = [
 <section id="experience" class="full-width h-full py-10 px-4 sm:px-8 lg:px-16 xl:px-32 bg-white text-dark">
   <div class="relative max-w-[1200px] mx-auto p-4 z-10">
     <div class="flex flex-row items-center gap-3 text-3xl sm:text-4xl">
-      <h2>Trayectoria</h2>
+      <h2>{t.experience.title}</h2>
     </div>
     <div class="relative mt-10">
       <div class="relative space-y-12 pl-8 pb-8">

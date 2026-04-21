@@ -7,9 +7,21 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Contact from '../components/Contact.astro';
 import Footer from '../components/Footer.astro';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const title = lang === 'en' 
+  ? "Alvaro Bustos - Functional Analyst / Developer" 
+  : "Alvaro Bustos - Analista Funcional / Desarrollador";
+  
+const description = lang === 'en'
+  ? "Portfolio of Alvaro Bustos, Functional Analyst and Developer with experience in Odoo, TypeScript and JavaScript. Discover my professional background, highlighted projects and technical skills on this personal website."
+  : "Portfolio de Alvaro Bustos, Analista Funcional y Desarrollador con experiencia en Odoo, TypeScript y JavaScript. Descubre mi trayectoria profesional, proyectos destacados y habilidades técnicas en este sitio web personal.";
 ---
 
-<Layout title="Alvaro Bustos - Analista Funcional / Desarrollador" description="Portfolio de Alvaro Bustos, Analista Funcional y Desarrollador con experiencia en Odoo, TypeScript y JavaScript. Descubre mi trayectoria profesional, proyectos destacados y habilidades técnicas en este sitio web personal.">
+<Layout title={title} description={description}>
   <Header />
   <main class="relative">
     <div class="spotlight" id="spotlight"></div>

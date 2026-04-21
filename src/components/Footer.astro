@@ -1,9 +1,13 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
 ---
 
 <footer class="relative z-10 bg-gray-100 text-dark border-t border-gray-200">
   <div class="relative max-w-[1200px] mx-auto p-4 z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-    <p class="text-dark text-sm order-2 sm:order-1">Alvaro Bustos &copy;2026</p>
+    <p class="text-dark text-sm order-2 sm:order-1">{t.footer.copyright}</p>
     <div class="flex items-center gap-4 order-1 sm:order-2">
       <button type="button" class="text-dark hover:text-primary transition-colors duration-200" onclick="document.getElementById('emailModal').showModal()">
         <svg width="1em" height="1em" viewBox="0 0 24 24" class="w-4 h-4 bg-dark rounded-full p-0.5 fill-current">
@@ -22,7 +26,7 @@
       </a>
     </div>
     <p class="text-gray-400 text-xs order-3">
-      Construido con <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="text-dark hover:text-primary transition-colors">Astro</a>
+      {t.footer.builtWith} <a href="https://astro.build/" target="_blank" rel="noopener noreferrer" class="text-dark hover:text-primary transition-colors">Astro</a>
       y <a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer" class="text-dark hover:text-primary transition-colors">Tailwind</a>
     </p>
   </div>
