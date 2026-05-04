@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -7,24 +7,53 @@ const t = useTranslations(lang);
 const projects = [
   {
     title: "Versus Highlight",
-    description: lang === 'en' ? "Web application that allows creating a thumbnail for social media (Oriented to fighting games), with a small internal editor to create the perfect image" : "Aplicacion web que permite crear una miniatura para redes sociales (Orientado a juegos de peleas), con un pequeño editor interno para crear la imagen perfecta",
+    description:
+      lang === "en"
+        ? "Web application that allows creating a thumbnail for social media (Oriented to fighting games), with a small internal editor to create the perfect image"
+        : "Aplicacion web que permite crear una miniatura para redes sociales (Orientado a juegos de peleas), con un pequeño editor interno para crear la imagen perfecta",
     image: "/img/versuspr.png",
     url: "https://versushighligts-main.vercel.app/",
     repo: "https://github.com/Alvaro099/versushighligts-main",
-    technologies: ["Python", "Flask", "Jinja2", "Javascript", "HTML", "CSS"]
+    technologies: ["Python", "Flask", "Jinja2", "Javascript", "HTML", "CSS"],
   },
   {
     title: "Portfolio Esports - Basado en Persona 3",
-    description: lang === 'en' ? "Web portfolio about my career as a commentator in the esports world, with a design inspired by the video game Persona 3" : "Portfolio web sobre mi carrera como relator dentro del mundo de los esports, con un diseño inspirado en el videojuego Persona 3",
+    description:
+      lang === "en"
+        ? "Web portfolio about my career as a commentator in the esports world, with a design inspired by the video game Persona 3"
+        : "Portfolio web sobre mi carrera como relator dentro del mundo de los esports, con un diseño inspirado en el videojuego Persona 3",
     image: "/img/p3pr.png",
     url: "https://p3cv-nirval.vercel.app/",
     repo: "https://github.com/Alvaro099/p3cv-nirval",
-    technologies: ["Javascript", "React" , "Framer Motion 12" , "Vite 5"]
+    technologies: ["Javascript", "React", "Framer Motion 12", "Vite 5"],
+  },
+
+  {
+    title: "Combo Maker",
+    description:
+      lang === "en"
+        ? "Combo Maker is a visually rich web application that allows fighting game players to easily generate, visualize, and share combo notations using in-game graphical inputs."
+        : "Combo Maker es una aplicación web visualmente rica que permite a los jugadores de juegos de lucha generar, visualizar y compartir fácilmente notaciones de combos utilizando entradas gráficas del juego.",
+    image: "/img/combopr.png",
+    url: "https://combomaker-ecru.vercel.app/",
+    repo: "https://github.com/Alvaro099",
+    technologies: [
+      "Python",
+      "Flask",
+      "Jinja2",
+      "Javascript",
+      "HTML",
+      "CSS",
+      "html2canvas",
+    ],
   },
 ];
 ---
 
-<section id="work" class="full-width h-full py-10 px-4 sm:px-8 lg:px-16 xl:px-32 bg-gray-100 text-dark">
+<section
+  id="work"
+  class="full-width h-full py-10 px-4 sm:px-8 lg:px-16 xl:px-32 bg-gray-100 text-dark"
+>
   <div class="relative max-w-[1200px] mx-auto p-4 z-10">
     <div class="flex flex-row items-center gap-3 text-3xl z-1">
       <h2 class="text-4xl">{t.projects.title}</h2>
@@ -34,41 +63,71 @@ const projects = [
         {t.projects.description}
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map(project => (
-          <div class="group bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary shadow-sm flex flex-col">
-            <a class="aspect-video w-full overflow-hidden bg-gray-200" href={project.url} target="_blank" rel="noopener nofollow">
-              <img alt={project.title} class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src={project.image}>
-            </a>
-            <div class="p-6 flex-grow flex flex-col">
-              <div class="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map(tech => (
-                  <span class="px-3 py-1 text-[10px] font-bold tracking-wider rounded-full bg-gray-100 text-primary border border-primary/50">{tech}</span>
-                ))}
-              </div>
-              <h3 class="text-lg font-bold mb-3 text-dark group-hover:text-primary transition-colors">{project.title}</h3>
-              <p class="text-gray text-sm leading-relaxed mb-6">{project.description}</p>
-              <div class="flex gap-2 justify-start mt-auto">
-                <a href={project.url} target="_blank" class="text-white px-4 py-2 rounded-3xl main-btn flex items-center overflow-hidden" style="--custom-border-color: rgba(255, 255, 255, 0.3)">
-                  <svg width="1em" height="1em" class="flex-shrink-0 mr-2">
-                    <symbol id="new-window" viewBox="0 0 24 24">
-                      <path fill="White" d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3z"/>
-                    </symbol>
-                    <use href="#new-window"></use>
-                  </svg>
-                  <span class="text-white">{t.projects.viewProject}</span>
-                </a>
-                {project.repo && (
-                  <a href={project.repo} target="_blank" class="text-white px-4 py-2 rounded-3xl main-btn flex items-center overflow-hidden" style="--custom-border-color: rgba(255, 255, 255, 0.3)">
+        {
+          projects.map((project) => (
+            <div class="group bg-white border border-gray-200 rounded-2xl overflow-hidden transition-all duration-300 hover:border-primary shadow-sm flex flex-col">
+              <a
+                class="aspect-video w-full overflow-hidden bg-gray-200"
+                href={project.url}
+                target="_blank"
+                rel="noopener nofollow"
+              >
+                <img
+                  alt={project.title}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  src={project.image}
+                />
+              </a>
+              <div class="p-6 flex-grow flex flex-col">
+                <div class="flex flex-wrap gap-2 mb-4">
+                  {project.technologies.map((tech) => (
+                    <span class="px-3 py-1 text-[10px] font-bold tracking-wider rounded-full bg-gray-100 text-primary border border-primary/50">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <h3 class="text-lg font-bold mb-3 text-dark group-hover:text-primary transition-colors">
+                  {project.title}
+                </h3>
+                <p class="text-gray text-sm leading-relaxed mb-6">
+                  {project.description}
+                </p>
+                <div class="flex gap-2 justify-start mt-auto">
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    class="text-white px-4 py-2 rounded-3xl main-btn flex items-center overflow-hidden"
+                    style="--custom-border-color: rgba(255, 255, 255, 0.3)"
+                  >
                     <svg width="1em" height="1em" class="flex-shrink-0 mr-2">
-                      <use href="#github"></use>
+                      <symbol id="new-window" viewBox="0 0 24 24">
+                        <path
+                          fill="White"
+                          d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3z"
+                        />
+                      </symbol>
+                      <use href="#new-window" />
                     </svg>
-                    <span class="text-white">{t.projects.viewRepo}</span>
+                    <span class="text-white">{t.projects.viewProject}</span>
                   </a>
-                )}
+                  {project.repo && (
+                    <a
+                      href={project.repo}
+                      target="_blank"
+                      class="text-white px-4 py-2 rounded-3xl main-btn flex items-center overflow-hidden"
+                      style="--custom-border-color: rgba(255, 255, 255, 0.3)"
+                    >
+                      <svg width="1em" height="1em" class="flex-shrink-0 mr-2">
+                        <use href="#github" />
+                      </svg>
+                      <span class="text-white">{t.projects.viewRepo}</span>
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
     </div>
   </div>
