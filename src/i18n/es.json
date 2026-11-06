@@ -19,7 +19,7 @@
     "introduction": "Introducción",
     "introText": "Soy <strong class=\"text-dark\">Analista Funcional / Desarrollador</strong> enfocado en crear experiencias digitales que generan impacto real. Gracias a mi conocimiento en <span class=\"font-[500] text-primary\">Odoo, Python y Javascript</span>, mis estudios y trabajo en diferentes rubros, puedo abordar proyectos desde una perspectiva integral, uniendo estrategia, creatividad y técnica para transformar ideas en soluciones digitales efectivas.",
     "technologies": "Tecnologías y herramientas",
-    "currentJob": "Busqueda de trabajo",
+    "currentJob": "Full Stack Developer en Farmacia Sanchez Antoniolli",
     "currentJobLabel": "Actualmente en",
     "studying": "Siglo 21",
     "studyingLabel": "Estudiando en"
@@ -29,7 +29,7 @@
   },
   "projects": {
     "title": "Proyectos",
-    "description": "Estos proyectos reflejan la exploración de las distintas herramientas que componentes Odoo, profundizando en sus frameworks para desarrollar soluciones funcionales y especializarme en su ecosistema.",
+    "description": "Estos proyectos reflejan la exploración de las distintas herramientas que componen Odoo, profundizando en sus frameworks para desarrollar soluciones funcionales y especializarme en su ecosistema.",
     "viewProject": "Ver Proyecto",
     "viewRepo": "Ver Repositorio"
   },

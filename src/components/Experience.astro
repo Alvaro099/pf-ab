@@ -5,13 +5,21 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const experiences = [
+   {
+    title: "Farmacia Sanchez Antoniolli",
+    role: lang === 'en' ? "Fullstack Developer / Odoo Developer" : "Desarrollador FullStack / Odoo Developer",
+    period: "Septiembre 2026 - Presente",
+    description: lang === 'en' ? "Full Stack and Odoo Developer focused on building custom modules, integrations and web applications. I take part in functional analysis, technical design, development, testing and deployment, delivering clean, maintainable code and efficient implementations." : "Desarrollador Full Stack y Odoo Developer enfocado en la construcción de módulos a medida, integraciones y aplicaciones web. Participo en el análisis funcional, diseño técnico, desarrollo, pruebas y despliegue, entregando código limpio, mantenible e implementaciones eficientes.",
+    technologies: ["Odoo", "Python", "Javascript", "ERP", "JS", "Node.js"],
+    isActive: true
+  }
   {
     title: "Be Innovation Tech",
     role: lang === 'en' ? "Functional Analyst / Developer" : "Analista Funcional / Desarrollador",
-    period: "Julio 2025 - Presente",
+    period: "Julio 2025 - Mayo 2026",
     description: lang === 'en' ? "Functional survey and analysis, scope definition and process advice, with participation in planning, documentation, testing, training and support, focused on efficient implementations and deliverable quality." : "Relevamiento y análisis funcional, definición de alcances y asesoramiento sobre procesos, con participación en planificación, documentación, pruebas, capacitación y soporte, enfocado en implementaciones eficientes y calidad de entregables.",
     technologies: ["Odoo", "Python", "Javascript", "ERP"],
-    isActive: true
+    isActive: false
   },
   {
     title: "Aurelia",
